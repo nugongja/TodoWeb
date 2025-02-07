@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: TodoWeb
+
+
+  # template
+  thymeleaf:
+    cache: false
+
+  # Spring DataSource (MySQL)
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/todo_db?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: Exampleyong2024
+
+  # Spring JPA
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    generate-ddl: false
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  # Swagger
+  doc:
+    api-docs:
+      enabled: true
+    swagger-ui:
+      enabled: true
+      path: /swagger-ui/index.html
