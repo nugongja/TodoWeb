@@ -2,9 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Todo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Vista Lab Dashboard</title>
 </head>
 <body>
-    <h1>Todo List</h1>
+
+<div class="header">
+    <h1>Hello, Aqeel, Start planning today</h1>
+</div>
+
+<div class="dashboard-container">
+    <div class="date-section">
+        <h2 id="day-name"></h2>
+        <h2 id="full-date">04, April 2024</h2>
+    </div>
+
+    <div class="task-section">
+        <div class="task-card">
+            <h3>Learn JavaScript</h3>
+            <p>Start: 04-04-2023</p>
+            <p>Status: Pending</p>
+        </div>
+
+        <div class="task-card">
+            <h3>Learn JavaScript</h3>
+            <p>Start: 05-04-2023</p>
+            <p>Status: Pending</p>
+        </div>
+
+        <div class="task-card">
+            <h3>Learn JavaScript</h3>
+            <p>Start: 06-04-2023</p>
+            <p>Status: Completed</p>
+        </div>
+
+        <div class="task-card">
+            <h3>Learn JavaScript</h3>
+            <p>Start: 07-04-2023</p>
+            <p>Status: Pending</p>
+        </div>
+    </div>
+
+    <div class="stats">
+        <p><strong>Completed Tasks:</strong> 4</p>
+        <p><strong>Pending Tasks:</strong> 15</p>
+        <p><strong>Total Tasks Created:</strong> 1,500</p>
+    </div>
+</div>
+
+<div class="footer">
+    <p>&copy; 2024 Aqeel Shahzad. All Rights Reserved.</p>
+</div>
+
+<script>
+    // JavaScript로 현재 날짜와 요일 설정
+    const date = new Date();
+
+    // 요일 이름 배열
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    // 월 이름 배열
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    // 현재 요일과 날짜 추출
+    const dayName = days[date.getDay()];
+    const day = date.getDate();
+    const month = months[date.getMonth()];
+    const year = date.getFullYear();
+
+    // 요소에 텍스트 설정
+    document.getElementById("day-name").textContent = dayName;
+    document.getElementById("full-date").textContent = `${day}, ${month} ${year}`;
+</script>
+
+
+
 </body>
 </html>
