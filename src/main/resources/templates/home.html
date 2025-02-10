@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Vista Lab Dashboard</title>
 </head>
 <body>
@@ -13,41 +13,63 @@
 </div>
 
 <div class="dashboard-container">
-    <div class="date-section">
-        <h2 id="day-name"></h2>
-        <h2 id="full-date">04, April 2024</h2>
-    </div>
-
-    <div class="task-section">
-        <div class="task-card">
-            <h3>Learn JavaScript</h3>
-            <p>Start: 04-04-2023</p>
-            <p>Status: Pending</p>
+    <div class="date">
+        <div class="day-section">
+            <h2 id="day-name"></h2>
         </div>
 
-        <div class="task-card">
-            <h3>Learn JavaScript</h3>
-            <p>Start: 05-04-2023</p>
-            <p>Status: Pending</p>
+        <div class="date-section">
+            <h2 id="full-date"></h2>
         </div>
 
-        <div class="task-card">
-            <h3>Learn JavaScript</h3>
-            <p>Start: 06-04-2023</p>
-            <p>Status: Completed</p>
-        </div>
-
-        <div class="task-card">
-            <h3>Learn JavaScript</h3>
-            <p>Start: 07-04-2023</p>
-            <p>Status: Pending</p>
+        <div class="calendar">
+            <p>달력이 들어갈 자리</p>
         </div>
     </div>
 
-    <div class="stats">
-        <p><strong>Completed Tasks:</strong> 4</p>
-        <p><strong>Pending Tasks:</strong> 15</p>
-        <p><strong>Total Tasks Created:</strong> 1,500</p>
+    <div class="todoList">
+        <div class="create-task">
+            <label for="blank"></label>
+            <label>
+                <input type="text" id="task-title" placeholder="Type Title of task">
+            </label>
+            <label>
+                <input type="text" id="task-detail" placeholder="Detail of your task">
+            </label>
+            <button type="submit">+</button>
+        </div>
+
+        <div class="task-section">
+            <div class="task-card">
+                <h3>Learn JavaScript</h3>
+                <p>Start: 04-04-2023</p>
+                <p>Status: Pending</p>
+            </div>
+
+            <div class="task-card">
+                <h3>Learn JavaScript</h3>
+                <p>Start: 05-04-2023</p>
+                <p>Status: Pending</p>
+            </div>
+
+            <div class="task-card">
+                <h3>Learn JavaScript</h3>
+                <p>Start: 06-04-2023</p>
+                <p>Status: Completed</p>
+            </div>
+
+            <div class="task-card">
+                <h3>Learn JavaScript</h3>
+                <p>Start: 07-04-2023</p>
+                <p>Status: Pending</p>
+            </div>
+        </div>
+
+        <div class="stats">
+            <p><strong>Completed Tasks:</strong> 4</p>
+            <p><strong>Pending Tasks:</strong> 15</p>
+            <p><strong>Total Tasks Created:</strong> 1,500</p>
+        </div>
     </div>
 </div>
 
@@ -74,6 +96,11 @@
     // 요소에 텍스트 설정
     document.getElementById("day-name").textContent = dayName;
     document.getElementById("full-date").textContent = `${day}, ${month} ${year}`;
+
+
+
+
+
 </script>
 
 
