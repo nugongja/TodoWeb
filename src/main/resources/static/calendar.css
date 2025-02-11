@@ -2,7 +2,6 @@
     width: 300px;
     height: 350px;
     aspect-ratio: 1 / 1;
-    margin: 0 auto;
     background: #f3f0fa;
     padding: 1em;
     border-radius: 10px;
@@ -60,11 +59,22 @@
 
 /* 날짜 스타일 */
 .day, .empty {
+    font-weight: bolder;
     text-align: center;
     padding: 10px 0;
     border-radius: 5px;
     transition: 0.3s;
     cursor: pointer;
+}
+
+
+.day:nth-child(7n) {
+    color: rgb(138, 139, 205); /* 토요일 */
+}
+
+
+.day:nth-child(7n+1) {
+    color: rgb(201, 109, 109); /* 일요일 */
 }
 
 

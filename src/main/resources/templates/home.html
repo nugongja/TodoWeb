@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="calendar.css">
     <title>Vista Lab Dashboard</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+    </style>
 </head>
 <body>
 
@@ -14,61 +17,81 @@
 </div>
 
 <div class="dashboard-container">
-    <div class="date">
-        <div class="day-section">
-            <h2 id="day-name"></h2>
+    <div class="main">
+        <div class="date">
+            <div class="day-section">
+                <h2 id="day-name"></h2>
+            </div>
+
+            <div class="date-section">
+                <h2 id="full-date"></h2>
+            </div>
+
+            <div class="calendar">
+            </div>
         </div>
 
-        <div class="date-section">
-            <h2 id="full-date"></h2>
-        </div>
+        <div class="todoList">
+            <div class="create-task">
+                <label>
+                    <input type="text" id="task-title" placeholder="Type Title of task">
+                </label>
+                <label>
+                    <input type="text" id="task-detail" placeholder="Detail of your task">
+                </label>
+                <button type="submit">+</button>
+            </div>
 
-        <div class="calendar">
+            <div class="task-section">
+                <div class="task-card">
+                    <h3>Learn JavaScript</h3>
+                    <p>Start: 04-04-2023</p>
+                    <p>Status: Pending</p>
+                </div>
+
+                <div class="task-card">
+                    <h3>Learn JavaScript</h3>
+                    <p>Start: 05-04-2023</p>
+                    <p>Status: Pending</p>
+                </div>
+
+                <div class="task-card">
+                    <h3>Learn JavaScript</h3>
+                    <p>Start: 06-04-2023</p>
+                    <p>Status: Completed</p>
+                </div>
+
+                <div class="task-card">
+                    <h3>Learn JavaScript</h3>
+                    <p>Start: 07-04-2023</p>
+                    <p>Status: Pending</p>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="todoList">
-        <div class="create-task">
-            <label for="blank"></label>
-            <label>
-                <input type="text" id="task-title" placeholder="Type Title of task">
-            </label>
-            <label>
-                <input type="text" id="task-detail" placeholder="Detail of your task">
-            </label>
-            <button type="submit">+</button>
-        </div>
-
-        <div class="task-section">
-            <div class="task-card">
-                <h3>Learn JavaScript</h3>
-                <p>Start: 04-04-2023</p>
-                <p>Status: Pending</p>
+    <div class="stats">
+        <div class="tasks-stats">
+            <div class="stats-box">
+                <div class="stats-type">
+                    <p><strong>Completed</strong></p>
+                    <p><strong>Tasks</strong></p>
+                </div>
+                <p class="stats-count">4</p>
             </div>
-
-            <div class="task-card">
-                <h3>Learn JavaScript</h3>
-                <p>Start: 05-04-2023</p>
-                <p>Status: Pending</p>
-            </div>
-
-            <div class="task-card">
-                <h3>Learn JavaScript</h3>
-                <p>Start: 06-04-2023</p>
-                <p>Status: Completed</p>
-            </div>
-
-            <div class="task-card">
-                <h3>Learn JavaScript</h3>
-                <p>Start: 07-04-2023</p>
-                <p>Status: Pending</p>
+            <div class="stats-box">
+                <div class="stats-type">
+                    <p><strong>Pending</strong></p>
+                    <p><strong>Tasks</strong></p>
+                </div>
+                <p class="stats-count">15</p>
             </div>
         </div>
-
-        <div class="stats">
-            <p><strong>Completed Tasks:</strong> 4</p>
-            <p><strong>Pending Tasks:</strong> 15</p>
-            <p><strong>Total Tasks Created:</strong> 1,500</p>
+        <div class="stats-box">
+            <div class="stats-type">
+                <p><strong>Tasks Created</strong></p>
+            </div>
+            <p class="stats-count">1,500</p>
         </div>
     </div>
 </div>
@@ -98,7 +121,7 @@
     document.getElementById("full-date").textContent = `${day}, ${month} ${year}`;
 </script>
 <script src="calendar.js"></script>
-
+<script src="todayTasks.js"></script>
 
 
 </body>
