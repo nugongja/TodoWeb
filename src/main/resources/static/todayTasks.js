@@ -15,11 +15,28 @@ document.addEventListener("DOMContentLoaded", async function() {
             taskCard.classList.add("task-card");
 
             taskCard.innerHTML = `
-                <p>${task.title}</p>
-                <h3>${task.todo}</h3>
-                <p>Start: ${task.startDate.split("T")[0]}</p>
-                <p>End: ${task.endDate.split("T")[0]}</p>
-                <p>Status: ${task.checked ? "Completed" : "Pending"}</p>
+                <div class="task-contents">
+                    <h3>${task.title}</h3>
+                    <div class="task-info">
+                        <p>${task.todo}</p>
+                    </div>
+                    <div class="task-date">
+                        <p>Start: ${task.startDate.split("T")[0]}</p>
+                    </div>
+                    <div>
+                        <p>Status: ${task.checked ? "Completed" : "Pending"}</p>
+                    </div>
+                </div>
+                <div class="task-button-container">
+                    <button type = "button", class="task-delete">
+                        <img src="img/delete.svg" width="30px" height="35px"></button>
+                    <button type = "button", class="task-edit">
+                        <img src="img/edit.svg" width="30px" height="30px"></button>
+                    </button>
+                    <button type = "button", class="task-complete">
+                        <img src="img/check.svg" width="35px" height="35px"></button>
+                    </button>
+                </div>
             `;
 
             taskSection.appendChild(taskCard);

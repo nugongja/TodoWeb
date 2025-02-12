@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="calendar.css">
     <title>Vista Lab Dashboard</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Island+Moments&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Island+Moments&display=swap');
     </style>
 </head>
 <body>
 
 <div class="header">
-    <h1>Hello, Aqeel, Start planning today</h1>
+    <h1>Hello, Yumin, Start planning today</h1>
 </div>
 
 <div class="dashboard-container">
@@ -33,53 +35,122 @@
 
         <div class="todoList">
             <div class="create-task">
-                <label>
+                <div>
                     <input type="text" id="task-title" placeholder="Type Title of task">
-                </label>
-                <label>
                     <input type="text" id="task-detail" placeholder="Detail of your task">
-                </label>
+                </div>
                 <button type="submit">+</button>
             </div>
 
             <div class="task-section">
                 <div class="task-card">
-                    <h3>Learn JavaScript</h3>
-                    <p>Start: 04-04-2023</p>
-                    <p>Status: Pending</p>
+                    <div class="task-contents">
+                        <h3>Learn JavaScript</h3>
+                        <div class="task-info">
+                            <p>투두 내용 detail이 들어갈 자리 글이 길어지면 다음 줄로 넘어가게 됨</p>
+                        </div>
+                        <div class="task-date">
+                            <p>Date: 04-04-2023</p>
+                        </div>
+                    </div>
+                    <div class="task-button-container">
+                        <button type = "button", class="task-delete">
+                            <img src="img/delete.svg" width="30px" height="35px"></button>
+                        <button type = "button", class="task-edit">
+                            <img src="img/edit.svg" width="30px" height="30px"></button>
+                        </button>
+                        <button type = "button", class="task-complete">
+                            <img src="img/check.svg" width="35px" height="35px"></button>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="task-card">
-                    <h3>Learn JavaScript</h3>
-                    <p>Start: 05-04-2023</p>
-                    <p>Status: Pending</p>
+                    <div class="task-contents">
+                        <h3>Learn JavaScript</h3>
+                        <div class="task-info">
+                            <p>투두 내용 detail이 들어갈 자리 글이 길어지면 다음 줄로 넘어가게 됨</p>
+                        </div>
+                        <div class="task-date">
+                            <p>Date: 04-04-2023</p>
+                        </div>
+                    </div>
+                    <div class="task-button-container">
+                        <button type = "button", class="task-delete">
+                            <img src="img/delete.svg" width="30px" height="35px"></button>
+                        <button type = "button", class="task-edit">
+                            <img src="img/edit.svg" width="30px" height="30px"></button>
+                        </button>
+                        <button type = "button", class="task-complete">
+                            <img src="img/check.svg" width="35px" height="35px"></button>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="task-card">
-                    <h3>Learn JavaScript</h3>
-                    <p>Start: 06-04-2023</p>
-                    <p>Status: Completed</p>
+                    <div class="task-contents">
+                        <h3>Learn JavaScript</h3>
+                        <div class="task-info">
+                            <p>투두 내용 detail이 들어갈 자리 글이 길어지면 다음 줄로 넘어가게 됨</p>
+                        </div>
+                        <div class="task-date">
+                            <p>Date: 04-04-2023</p>
+                        </div>
+                    </div>
+                    <div class="task-button-container">
+                        <button type = "button", class="task-delete">
+                            <img src="img/delete.svg" width="30px" height="35px"></button>
+                        <button type = "button", class="task-edit">
+                            <img src="img/edit.svg" width="30px" height="30px"></button>
+                        </button>
+                        <button type = "button", class="task-complete">
+                            <img src="img/check.svg" width="35px" height="35px"></button>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="task-card">
-                    <h3>Learn JavaScript</h3>
-                    <p>Start: 07-04-2023</p>
-                    <p>Status: Pending</p>
+                    <div class="task-contents">
+                        <h3>Learn JavaScript</h3>
+                        <div class="task-info">
+                            <p>투두 내용 detail이 들어갈 자리 글이 길어지면 다음 줄로 넘어가게 됨</p>
+                        </div>
+                        <div class="task-date">
+                            <p>Date: 04-04-2023</p>
+                        </div>
+                    </div>
+                    <div class="task-button-container">
+                        <button type = "button", class="task-delete">
+                            <img src="img/delete.svg" width="30px" height="35px"></button>
+                        <button type = "button", class="task-edit">
+                            <img src="img/edit.svg" width="30px" height="30px"></button>
+                        </button>
+                        <button type = "button", class="task-complete">
+                            <img src="img/check.svg" width="35px" height="35px"></button>
+                        </button>
+                    </div>
                 </div>
             </div>
+
+            <div class="task-load">
+                <button type="button">
+                    <p>load more</p>
+                </button>
+            </div>
+
         </div>
     </div>
 
     <div class="stats">
         <div class="tasks-stats">
-            <div class="stats-box">
+            <div class="stats-box" id="stats-complete">
                 <div class="stats-type">
                     <p><strong>Completed</strong></p>
                     <p><strong>Tasks</strong></p>
                 </div>
                 <p class="stats-count">4</p>
             </div>
-            <div class="stats-box">
+            <div class="stats-box" id="stats-pending">
                 <div class="stats-type">
                     <p><strong>Pending</strong></p>
                     <p><strong>Tasks</strong></p>
@@ -87,7 +158,7 @@
                 <p class="stats-count">15</p>
             </div>
         </div>
-        <div class="stats-box">
+        <div class="stats-box" id="stats-created">
             <div class="stats-type">
                 <p><strong>Tasks Created</strong></p>
             </div>
@@ -97,32 +168,11 @@
 </div>
 
 <div class="footer">
-    <p>&copy; 2024 Aqeel Shahzad. All Rights Reserved.</p>
+    <p>&copy; 2025 Yumin. All Rights Reserved.</p>
 </div>
 
-<script>
-    // JavaScript로 현재 날짜와 요일 설정
-    const date = new Date();
-
-    // 요일 이름 배열
-    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-    // 월 이름 배열
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-    // 현재 요일과 날짜 추출
-    const dayName = days[date.getDay()];
-    const day = date.getDate();
-    const month = months[date.getMonth()];
-    const year = date.getFullYear();
-
-    // 요소에 텍스트 설정
-    document.getElementById("day-name").textContent = dayName;
-    document.getElementById("full-date").textContent = `${day}, ${month} ${year}`;
-</script>
+<script src="todayDate.js"></script>
 <script src="calendar.js"></script>
 <script src="todayTasks.js"></script>
-
-
 </body>
 </html>

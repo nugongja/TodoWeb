@@ -10,16 +10,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const firstDay = new Date(year, month, 1).getDay();
         const lastDate = new Date(year, month + 1, 0).getDate();
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
         let html = `
             <div class="calendar-header">
                 <button id="prev-month">&lt;</button>
-                <h2>${year}년 ${month + 1}월</h2>
+                <h3>${year} ${months[month]}</h3>
                 <button id="next-month">&gt;</button>
             </div>
             <div class="calendar-body">
                 <div class="day-names">
-                    <div>SUN</div><div>MON</div><div>TUE</div><div>WED</div><div>THU</div><div>FRI</div><div>SAT</div>
+                    <div>SU</div><div>MO</div><div>TU</div><div>WE</div><div>TH</div><div>FR</div><div>SA</div>
                 </div>
             <div class="days">
         `;
