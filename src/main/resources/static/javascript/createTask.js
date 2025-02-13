@@ -2,9 +2,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const addTaskBtn = document.getElementById("add-task-btn");
 
     addTaskBtn.addEventListener("click", async function () {
-        const title = document.getElementById("task-title").value;
-        const detail = document.getElementById("task-detail").value;
-        const date = document.getElementById("task-start").value;  // id 유지
+        const titleInput = document.getElementById("task-title");
+        const detailInput = document.getElementById("task-detail");
+        const dateInput = document.getElementById("task-start");
+
+        const title = titleInput.value;
+        const detail = detailInput.value;
+        const date = dateInput.value;
 
         if (!title || !detail || !date) {
             alert("모든 필드를 입력해야 합니다!");
@@ -29,6 +33,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (response.ok) {
                 console.log("Task added successfully");
+
+                // 입력 필드 비우기
+                titleInput.value = "";
+                detailInput.value = "";
+                dateInput.value = "";
+                console.log("입력 필드 초기화 완료!");
 
                 // todayTasks.js의 fetchTasks() 호출
                 if (typeof fetchTasks === "function") {
