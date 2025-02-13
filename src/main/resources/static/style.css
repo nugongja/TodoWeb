@@ -123,6 +123,13 @@ button {
     width: 75%;
 }
 
+#task-start {
+    cursor: pointer;
+    width: 15%;
+    font-size: 12px;
+}
+
+
 
 .create-task button {
     height: 100%;
