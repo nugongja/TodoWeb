@@ -10,8 +10,11 @@ async function fetchTasks() {
         // 기존 task-section 초기화
         taskSection.innerHTML = "";
 
+        const visibleTasks = tasks.slice(0, 4);
+
+
         // 새로운 task-card 요소 추가
-        tasks.forEach(task => {
+        visibleTasks.forEach(task => {
             const taskCard = document.createElement("div");
             taskCard.classList.add("task-card");
 
