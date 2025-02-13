@@ -14,4 +14,8 @@ public interface TodoRepository extends JpaRepository<checkList, Long> {
             @Param("startOfDay") LocalDateTime startOfDay,
             @Param("endOfDay") LocalDateTime endOfDay
     );
+
+    List<checkList> findByCheckedTrue();
+
+    List<checkList> findByCheckedFalse();
 }

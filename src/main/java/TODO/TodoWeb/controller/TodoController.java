@@ -27,4 +27,13 @@ public class TodoController {
     public checkList addTask(@RequestBody checkList newTask) {
         return this.todoService.saveTask(newTask);
     }
+
+    @GetMapping("/getTasksCount")
+    public List<Integer> getTasksCount(){
+        Integer completed = this.todoService.getCompletedTasks();
+        Integer pending = this.todoService.getPendingTasks();
+        Integer total = completed + pending;
+
+        return List.of(completed, pending, total);
+    }
 }

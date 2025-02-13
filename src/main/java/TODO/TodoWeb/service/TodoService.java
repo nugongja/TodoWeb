@@ -25,4 +25,14 @@ public class TodoService {
     public checkList saveTask(checkList newTask) {
         return this.todoRepository.save(newTask);
     }
+
+    public Integer getCompletedTasks(){
+        List<checkList> list = this.todoRepository.findByCheckedTrue();
+        return list.size();
+    }
+
+    public Integer getPendingTasks(){
+        List<checkList> list = this.todoRepository.findByCheckedFalse();
+        return list.size();
+    }
 }
