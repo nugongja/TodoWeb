@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", async function() {
+async function fetchTasks() {
     const taskSection = document.querySelector(".task-section");
     const loadMoreButton = document.querySelector(".task-load");
 
@@ -50,4 +50,6 @@ document.addEventListener("DOMContentLoaded", async function() {
     } catch (error) {
         console.error("Error fetching tasks:", error);
     }
-});
+}
+
+document.addEventListener("DOMContentLoaded", fetchTasks());
