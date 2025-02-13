@@ -151,7 +151,6 @@ button {
     grid-template-rows: 1fr 1fr;
     place-items: center;
     gap: 20px;
-    margin: 20px 0px 0px 0px;
     padding: 20px;
 }
 
