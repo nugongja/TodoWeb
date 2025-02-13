@@ -25,7 +25,6 @@ public class TodoController {
 
     @PostMapping("/add")
     public checkList addTask(@RequestBody checkList newTask) {
-        System.out.println("📥 새 작업 추가 요청: " + newTask.getTitle() + " | " + newTask.getStartDate());
         return this.todoService.saveTask(newTask);
     }
 }
