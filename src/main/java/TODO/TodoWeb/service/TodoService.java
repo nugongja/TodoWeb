@@ -22,4 +22,7 @@ public class TodoService {
         return this.todoRepository.findByStartDate(startOfDay, endOfDay);
     }
 
+    public checkList saveTask(checkList newTask) {
+        return this.todoRepository.save(newTask);
+    }
 }
