@@ -138,8 +138,10 @@ button {
 
 
 .task-section {
+    height: 340px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     place-items: center;
     gap: 20px;
     margin: 20px 0px 0px 0px;
@@ -147,7 +149,7 @@ button {
 }
 
 .task-card {
-    width: 300px;
+    width: 330px;
     display: flex;
     flex-direction: row;
     max-height: 110px;
