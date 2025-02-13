@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", async function() {
     const taskSection = document.querySelector(".task-section");
+    const loadMoreButton = document.querySelector(".task-load");
 
     try {
         // API 호출하여 오늘 날짜의 작업 가져오기
@@ -23,9 +24,6 @@ document.addEventListener("DOMContentLoaded", async function() {
                     <div class="task-date">
                         <p>Start: ${task.startDate.split("T")[0]}</p>
                     </div>
-                    <div>
-                        <p>Status: ${task.checked ? "Completed" : "Pending"}</p>
-                    </div>
                 </div>
                 <div class="task-button-container">
                     <button type = "button", class="task-delete">
@@ -41,6 +39,13 @@ document.addEventListener("DOMContentLoaded", async function() {
 
             taskSection.appendChild(taskCard);
         });
+
+        // task-card 개수가 4개 이하면 load more 버튼 숨기기
+        if (tasks.length <= 4) {
+            loadMoreButton.style.display = "none";
+        } else {
+            loadMoreButton.style.display = "flex"; // 기본적으로 보이도록 설정
+        }
 
     } catch (error) {
         console.error("Error fetching tasks:", error);
