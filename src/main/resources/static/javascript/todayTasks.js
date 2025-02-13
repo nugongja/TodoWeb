@@ -52,4 +52,4 @@ async function fetchTasks() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", fetchTasks());
+document.addEventListener("DOMContentLoaded", fetchTasks);
