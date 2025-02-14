@@ -41,10 +41,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log("입력 필드 초기화 완료!");
 
                 // todayTasks.js의 fetchTasks() 호출
-                if (typeof fetchTasks === "function") {
+                if (typeof fetchTasks === "function" && typeof fetchTasksStats == 'function') {
                     fetchTasks();  // 작업 목록 갱신
+                    fetchTasksStats();
                 } else {
-                    console.warn("fetchTasks 함수가 정의되지 않았습니다.");
+                    console.warn("fetchTasks 또는 fetchTasksStats 함수가 정의되지 않았습니다.");
                 }
 
             } else {
