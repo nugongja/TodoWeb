@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- css -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="calendar.css">
-    <link rel="stylesheet" href="loadmore.css">
-    <title>todo Lab Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/calendar.css">
+    <title>Vista Lab Dashboard</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Island+Moments&display=swap');
@@ -15,104 +13,81 @@
     </style>
 </head>
 <body>
-<!-- header -->
+
 <div class="header">
     <h1>Hello, Yumin, Start planning today</h1>
 </div>
-<!-- dashboard container -->
+
 <div class="dashboard-container">
-    <!-- main container -->
     <div class="main">
-        <!-- date container -->
         <div class="date">
             <div class="day-section">
                 <h2 id="day-name"></h2>
             </div>
+
             <div class="date-section">
                 <h2 id="full-date"></h2>
             </div>
+
             <div class="calendar">
             </div>
         </div>
-        <!-- todoList container -->
+
         <div class="todoList">
-            <!-- create task container -->
             <div class="create-task">
                 <div>
                     <input type="text" id="task-title" placeholder="Type Title of task">
                     <input type="text" id="task-detail" placeholder="Detail of your task">
-                    <input type="date" id="task-start">
+                    <input type="date" id="task-start">  <!-- 날짜 입력 추가 -->
                 </div>
                 <button type="submit" id="add-task-btn">+</button>
             </div>
-            <!-- task section container -->
+
             <div class="task-section">
-                <div class="task-card">
-                    <div class="task-contents">
-                        <h3>Learn JavaScript</h3>
-                        <div class="task-info">
-                            <p>투두 내용 detail이 들어갈 자리</p>
-                        </div>
-                        <div class="task-date">
-                            <p>Date: 04-04-2023</p>
-                        </div>
-                    </div>
-                    <div class="task-button-container">
-                        <button type = "button", class="task-delete">
-                            <img src="img/delete.svg" width="30px" height="35px"></button>
-                        <button type = "button", class="task-edit">
-                            <img src="img/edit.svg" width="30px" height="30px"></button>
-                        </button>
-                        <button type = "button", class="task-complete">
-                            <img src="img/check.svg" width="35px" height="35px"></button>
-                        </button>
-                    </div>
-                </div>
             </div>
-            <!-- task load button container -->
+
             <div class="task-load">
-                <button type="button" id="load-more-btn">
+                <button type="button">
                     <p>load more</p>
                 </button>
             </div>
         </div>
     </div>
-    <!-- stats container -->
+
     <div class="stats">
-        <!-- task status container -->
         <div class="tasks-stats">
             <div class="stats-box" id="stats-complete">
                 <div class="stats-type">
                     <p><strong>Completed</strong></p>
                     <p><strong>Tasks</strong></p>
                 </div>
-                <p class="stats-count">4</p>
+                <p class="stats-count">0</p>
             </div>
             <div class="stats-box" id="stats-pending">
                 <div class="stats-type">
                     <p><strong>Pending</strong></p>
                     <p><strong>Tasks</strong></p>
                 </div>
-                <p class="stats-count">15</p>
+                <p class="stats-count">0</p>
             </div>
         </div>
-        <!-- total task container -->
         <div class="stats-box" id="stats-created">
             <div class="stats-type">
                 <p><strong>Tasks Created</strong></p>
             </div>
-            <p class="stats-count">1,500</p>
+            <p class="stats-count">0</p>
         </div>
     </div>
 </div>
-<!-- footer -->
+
 <div class="footer">
     <p>&copy; 2025 Yumin. All Rights Reserved.</p>
 </div>
-<!-- script -->
-<script src="todayDate.js"></script>
-<script src="calendar.js"></script>
-<script src="todayTasks.js"></script>
-<script src="loadmore.js"></script>
+
+<script src="javascript/todayDate.js"></script>
+<script src="javascript/calendar.js"></script>
+<script src="javascript/todayTasks.js"></script>
+<script src="javascript/tasksStats.js"></script>
+<script src="javascript/createTask.js"></script>
 </body>
 </html>
