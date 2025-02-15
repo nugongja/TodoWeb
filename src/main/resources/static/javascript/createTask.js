@@ -48,6 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     console.warn("fetchTasks 또는 fetchTasksStats 함수가 정의되지 않았습니다.");
                 }
 
+                // Task 추가 이벤트 발생 → Load More 갱신
+                document.dispatchEvent(new Event("taskAdded"));
             } else {
                 console.error("Failed to add task");
             }

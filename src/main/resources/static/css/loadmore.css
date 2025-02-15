@@ -3,9 +3,9 @@
     position: fixed;
     top: 0;
     right: -30%; /* 처음엔 화면 오른쪽 바깥 */
-    width: 470px;
+    width: 440px;
     height: 90%;
-    padding: 20px;
+    padding: 10px;
     background-color: rgb(243, 118, 118);
     box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.5s ease-in-out;
@@ -21,16 +21,18 @@
 .task-list-container {
     flex-grow: 1; /* 남은 공간을 모두 차지 */
     overflow-y: auto; /* 세로 스크롤 활성화 */
-    max-height: 100%; /* 화면 높이의 80%까지 스크롤 가능 */
-    width: 400px;
+    max-height: 98%; /* 화면 높이의 98%까지 스크롤 가능 */
+    width: 370px;
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
+    padding: 10px;
 }
 
 /* 스크롤바 스타일 조정 (선택 사항) */
 .task-list-container::-webkit-scrollbar {
     width: 8px;
+    margin-left: 2px;
 }
 
 .task-list-container::-webkit-scrollbar-thumb {
