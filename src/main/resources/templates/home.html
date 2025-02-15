@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/calendar.css">
     <link rel="stylesheet" href="css/loadmore.css">
@@ -14,27 +15,28 @@
     </style>
 </head>
 <body>
-
+<!-- header -->
 <div class="header">
     <h1>Hello, Yumin, Start planning today</h1>
 </div>
-
+<!-- dashboard -->
 <div class="dashboard-container">
+    <!-- mainr -->
     <div class="main">
+        <!-- date -->
         <div class="date">
             <div class="day-section">
                 <h2 id="day-name"></h2>
             </div>
-
             <div class="date-section">
                 <h2 id="full-date"></h2>
             </div>
-
             <div class="calendar">
             </div>
         </div>
-
+        <!-- todoList -->
         <div class="todoList">
+            <!-- create task -->
             <div class="create-task">
                 <div>
                     <input type="text" id="task-title" placeholder="Type Title of task">
@@ -43,10 +45,10 @@
                 </div>
                 <button type="submit" id="add-task-btn">+</button>
             </div>
-
+            <!-- task section -->
             <div class="task-section">
             </div>
-
+            <!-- load more button -->
             <div class="task-load">
                 <button type="button" id="load-more-btn">
                     <p>load more</p>
@@ -54,8 +56,9 @@
             </div>
         </div>
     </div>
-
+    <!-- stats -->
     <div class="stats">
+        <!-- tasks status -->
         <div class="tasks-stats">
             <div class="stats-box" id="stats-complete">
                 <div class="stats-type">
@@ -72,6 +75,7 @@
                 <p class="stats-count">0</p>
             </div>
         </div>
+        <!-- total tasks -->
         <div class="stats-box" id="stats-created">
             <div class="stats-type">
                 <p><strong>Tasks Created</strong></p>
@@ -80,11 +84,11 @@
         </div>
     </div>
 </div>
-
+<!-- footer -->
 <div class="footer">
     <p>&copy; 2025 Yumin. All Rights Reserved.</p>
 </div>
-
+<!-- script -->
 <script src="javascript/todayDate.js"></script>
 <script src="javascript/calendar.js"></script>
 <script src="javascript/todayTasks.js"></script>
