@@ -19,6 +19,10 @@ async function fetchTasks() {
             taskCard.classList.add("task-card");
             taskCard.setAttribute("data-id", task.id);
 
+            if(task.checked){
+                taskCard.classList.add("completed");
+            }
+
             taskCard.innerHTML = `
                 <div class="task-contents">
                     <h3>${task.title}</h3>
