@@ -4,6 +4,8 @@ package TODO.TodoWeb.controller;
 import TODO.TodoWeb.entity.checkList;
 import TODO.TodoWeb.service.TodoService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -35,5 +37,28 @@ public class TodoController {
         Integer total = completed + pending;
 
         return List.of(completed, pending, total);
+    }
+
+    @PostMapping("/taskComplete/{id}")
+    public ResponseEntity<String> toogleTaskComplete(@PathVariable("id") Long id){
+        checkList task = this.todoService.getTask(id);
+        if(task == null){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Task not found");
+        }
+
+        task.setChecked(!task.isChecked());
+        this.todoService.saveTask(task);
+        return ResponseEntity.ok("Task completed toggled");
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteTask(@PathVariable("id") Long id){
+        boolean isDeleted = this.todoService.deleteById(id);
+        if(isDeleted){
+            return ResponseEntity.ok("Task deleted successfully");
+        }
+        else{
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Task not found");
+        }
     }
 }

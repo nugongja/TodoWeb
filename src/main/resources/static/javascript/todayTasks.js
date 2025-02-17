@@ -17,6 +17,7 @@ async function fetchTasks() {
         visibleTasks.forEach(task => {
             const taskCard = document.createElement("div");
             taskCard.classList.add("task-card");
+            taskCard.setAttribute("data-id", task.id);
 
             taskCard.innerHTML = `
                 <div class="task-contents">

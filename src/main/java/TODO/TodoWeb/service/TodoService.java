@@ -9,11 +9,20 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
 public class TodoService {
     private final TodoRepository todoRepository;
+
+    public checkList getTask(Long id){
+        Optional<checkList> task = this.todoRepository.findById(id);
+        if(task.isPresent()){
+            return task.get();
+        }
+        return null;
+    }
 
     public List<checkList> getTodayList(LocalDate today) {
         LocalDateTime startOfDay = today.atStartOfDay(); // 00:00:00
@@ -34,5 +43,14 @@ public class TodoService {
     public Integer getPendingTasks(){
         List<checkList> list = this.todoRepository.findByCheckedFalse();
         return list.size();
+    }
+
+    public boolean deleteById(Long id) {
+        Optional<checkList> task = this.todoRepository.findById(id);
+        if(task.isPresent()){
+            this.todoRepository.delete(task.get());
+            return true;
+        }
+        return false;
     }
 }
