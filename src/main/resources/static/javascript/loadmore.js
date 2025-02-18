@@ -11,8 +11,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let taskHTML = "";
             tasks.forEach(task => {
+                let completedClass = task.checked ? "completed" : "";
+
                 taskHTML += `
-                    <div class="task-card">
+                    <div class="task-card ${completedClass}" data-id="${task.id}">
                         <div class="task-contents">
                             <h3>${task.title}</h3>
                             <div class="task-info">
