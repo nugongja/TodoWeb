@@ -49,11 +49,7 @@ async function fetchTasks() {
         });
 
         // task-card 개수가 4개 이하면 load more 버튼 숨기기
-        if (tasks.length <= 4) {
-            loadMoreButton.style.display = "none";
-        } else {
-            loadMoreButton.style.display = "flex"; // 기본적으로 보이도록 설정
-        }
+        loadMoreButton.style.display = tasks.length > 4 ? "flex" : "none";
 
     } catch (error) {
         console.error("Error fetching tasks:", error);
