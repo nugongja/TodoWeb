@@ -3,10 +3,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const toggleButton = document.getElementById("load-more-btn");
     let newTaskSection = null;
     let isTaskSectionVisible = false;
+    let selectedDate = null;  // 선택된 날짜를 저장할 변수
+
+    // 선택된 날짜를 갱신하는 함수
+    function updateSelectedDate(date){
+        selectedDate = date;
+    }
 
     async function fetchLoadMoreTasks() {
         try {
-            const response = await fetch("http://localhost:8080/todo/today");
+
+            // 선택된 날짜가 없으면 오늘 날짜로 기본 설정
+            if(!selectedDate){
+                const today = new Date();
+                selectedDate = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+            }
+
+            console.log(`Fetching Load More tasks for: ${selectedDate}`);
+
+            const encodedDate = encodeURIComponent(selectedDate);
+            const response = await fetch(`http://localhost:8080/todo/date?date=${encodedDate}`);
             const tasks = await response.json();
 
             let taskHTML = "";
@@ -100,5 +116,10 @@ document.addEventListener("DOMContentLoaded", function () {
         if (isTaskSectionVisible) {
             toggleLoadMoreTasks();
         }
+    });
+
+    // 캘린더에서 날짜 클릭 시 선택된 날짜 업데이트
+    document.addEventListener("dateSelected", function(event){
+        updateSelectedDate(event.detail);
     });
 });

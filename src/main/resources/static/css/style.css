@@ -142,9 +142,26 @@ button {
     flex-shrink: 0; /* 버튼 크기가 줄어들지 않도록 설정 */
 }
 
-
+/*  기본 task-section 스타일 (제거하지 말 것!) */
 .task-section {
     height: 340px;
+    padding: 20px;
+}
+
+/* Task가 없을 때 중앙 정렬 */
+.task-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 340px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #61615df1;
+}
+
+
+/* Task가 있을 때 기존 스타일 유지 */
+.task-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;

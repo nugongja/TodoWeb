@@ -25,6 +25,17 @@ public class TodoController {
         return this.todoService.getTodayList(today);
     }
 
+    @GetMapping("/date")
+    public ResponseEntity<?> getTasksByDate(@RequestParam("date") String date){
+        try{
+            LocalDate localDate = LocalDate.parse(date);
+            List<checkList> tasks = this.todoService.getTodayList(localDate);
+            return ResponseEntity.ok(tasks);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid date format. Use YYYY-MM-DD.");
+        }
+    }
+
     @PostMapping("/add")
     public checkList addTask(@RequestBody checkList newTask) {
         return this.todoService.saveTask(newTask);

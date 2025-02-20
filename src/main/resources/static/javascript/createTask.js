@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // todayTasks.js의 fetchTasks() 호출
                 if (typeof fetchTasks === "function" && typeof fetchTasksStats == 'function') {
-                    fetchTasks();  // 작업 목록 갱신
+                    fetchTasksByDate();  // 작업 목록 갱신
                     fetchTasksStats();
                 } else {
                     console.warn("fetchTasks 또는 fetchTasksStats 함수가 정의되지 않았습니다.");

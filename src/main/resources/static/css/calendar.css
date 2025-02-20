@@ -8,7 +8,6 @@
     overflow-wrap: break-word;
 }
 
-
 .calendar-header {
     display: flex;
     justify-content: space-between;
@@ -84,6 +83,12 @@
 
 .day:hover {
     background: #F87777;
+}
+
+.day.selected {
+    background: #F87777;
+    color: white;
+    border-radius: 5px;
 }
 
 .empty {
