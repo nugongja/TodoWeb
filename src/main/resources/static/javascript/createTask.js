@@ -40,15 +40,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 dateInput.value = "";
                 console.log("입력 필드 초기화 완료!");
 
-                // todayTasks.js의 fetchTasks() 호출
-                if (typeof fetchTasks === "function" && typeof fetchTasksStats == 'function') {
-                    fetchTasksByDate();  // 작업 목록 갱신
-                    fetchTasksStats();
-                } else {
-                    console.warn("fetchTasks 또는 fetchTasksStats 함수가 정의되지 않았습니다.");
-                }
+                // Task 추가된 날짜를 반영하여 fetchTasksByDate 호출
+                fetchTasksByDate(date);
+                fetchTasksStats();
 
-                // Task 추가 이벤트 발생 → Load More 갱신
+                // Load More도 새로운 날짜에 맞춰 갱신
+                document.dispatchEvent(new CustomEvent("dateSelected", { detail: date }));
                 document.dispatchEvent(new Event("taskAdded"));
             } else {
                 console.error("Failed to add task");

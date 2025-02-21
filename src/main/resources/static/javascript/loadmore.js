@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     async function fetchLoadMoreTasks() {
         try {
-
             // 선택된 날짜가 없으면 오늘 날짜로 기본 설정
             if(!selectedDate){
                 const today = new Date();
@@ -118,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // 캘린더에서 날짜 클릭 시 선택된 날짜 업데이트
+    // 날짜 선택 시 Load More의 selectedDate를 갱신
     document.addEventListener("dateSelected", function(event){
         updateSelectedDate(event.detail);
     });

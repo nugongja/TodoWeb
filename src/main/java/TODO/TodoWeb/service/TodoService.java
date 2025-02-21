@@ -6,10 +6,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -25,10 +24,9 @@ public class TodoService {
     }
 
     public List<checkList> getTodayList(LocalDate today) {
-        LocalDateTime startOfDay = today.atStartOfDay(); // 00:00:00
-        LocalDateTime endOfDay = today.atTime(LocalTime.MAX); // 23:59:59
-
-        return this.todoRepository.findByStartDate(startOfDay, endOfDay);
+        return todoRepository.findAll().stream()
+                .filter(task -> task.getStartDate().toLocalDate().equals(today))
+                .collect(Collectors.toList());
     }
 
     public checkList saveTask(checkList newTask) {

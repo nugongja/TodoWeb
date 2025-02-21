@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function (){
     const today = new Date();
     const todayDate = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
-    console.log(`Initial fetch for today"'"s date: ${todayDate}`);
+    console.log(`Initial fetch for todays date: ${todayDate}`);
     fetchTasksByDate(todayDate);  // 올바른 날짜 값 전달
 });
 
@@ -85,4 +85,3 @@ async function fetchTasksByDate(selectedDate) {
         console.error("Error fetching tasks for selected date:", error);
     }
 }
-

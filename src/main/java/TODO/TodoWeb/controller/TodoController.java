@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -37,8 +38,20 @@ public class TodoController {
     }
 
     @PostMapping("/add")
-    public checkList addTask(@RequestBody checkList newTask) {
-        return this.todoService.saveTask(newTask);
+    public ResponseEntity<?> addTask(@RequestBody checkList newTask) {
+        try{
+            if (newTask.getStartDate() == null) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Start date is required.");
+            }
+
+            LocalDateTime taskDateTime = newTask.getStartDate();
+            newTask.setStartDate(taskDateTime);
+
+            checkList savedTask = this.todoService.saveTask(newTask);
+            return ResponseEntity.ok(savedTask);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid date format. Use YYYY-MM-DD.");
+        }
     }
 
     @GetMapping("/getTasksCount")

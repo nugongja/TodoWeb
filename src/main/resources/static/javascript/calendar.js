@@ -57,9 +57,13 @@ document.addEventListener("DOMContentLoaded", function () {
             renderCalendar(currentYear, currentMonth);
         });
 
+        // 이전에 선택된 날짜를 저장하는 변수
+        let selectedDate = todayDate;
+
+        // 날짜 클릭 시 .selected 클래스를 추가하여 강조
         document.querySelectorAll(".day").forEach(dayElement => {
              dayElement.addEventListener("click", function () {
-                const selectedDate = this.getAttribute("data-date");  // 올바른 날짜 값 가져오기
+                selectedDate = this.getAttribute("data-date");  // 올바른 날짜 값 가져오기
                 console.log(`Selected date: ${selectedDate}`);
 
                 // 이전에 선택된 날짜에서 `.selected` 제거
@@ -68,7 +72,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 // 현재 선택한 날짜에 `.selected` 추가
                 this.classList.add("selected");
 
-                fetchTasksByDate(selectedDate);  // 날짜 값 전달
+                // 해당 날짜의 tasks 불러오기
+                fetchTasksByDate(selectedDate);
 
                 // 선택된 날짜를 Load More로 전달
                 document.dispatchEvent(new CustomEvent("dateSelected", { detail: selectedDate }));
